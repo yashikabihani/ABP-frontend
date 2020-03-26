@@ -1,0 +1,75 @@
+#login {
+  .mat-input-container {
+    width: 100%;
+  }
+
+  .jumbotron {
+    border-radius: 0;
+    background-color: #ffffff;
+  }
+
+  hr {
+    border-top: 1px solid #2196f3;
+  }
+
+
+  .mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+
+  }
+
+  .login-card {
+    margin-top: 30px;
+  }
+
+  .button--accent.mdl-button--accent.mdl-button--fab {
+    position: fixed;
+    bottom: 75px;
+    right: 25px;
+  }
+}
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+.google-btn {
+  width: 214px;
+  height: 42px;
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  // position: right;
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: $white;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 22px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: black;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Open Sans";
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+  }
+  &:active {
+    background: $button-active-blue;
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+

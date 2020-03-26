@@ -1,0 +1,71 @@
+<div class="container-fluid" id="login">
+  <div class="container col-sm-12">
+    <h1 class="display-3 text-center"></h1>
+    <p class="lead text-center"></p>
+    <!-- <hr class="my-4"> -->
+    <div class="col-sm-5 offset-sm-4">
+      <small></small>
+      <p class="lead"></p>
+
+    </div>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
+    
+     <div class="justify-content-center">
+      <button mat-stroked-button color="primary" (click)="toggleLogin()">Login</button>
+      <button class="ml-2" mat-stroked-button color="primary" (click)="signUp()">Get Started</button>
+    </div>
+  </div>
+ 
+  <div id="target" class="login-card" [hidden]="!isVisible">
+    <form #f="ngForm" novalidate (ngSubmit)="checkLogin(f.value, f.valid, f)">
+      <div class="row" *ngIf="isLoading">
+        <div class="col-sm-6 offset-sm-3">
+          <mat-progress-bar color="primary"></mat-progress-bar>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+          <mat-card class="z-depth-5">
+            <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
+              <div class="col-sm-12">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email" name="email" #email="ngModel" type="text"
+                         [(ngModel)]="currentUser.email" [email]="true" required>
+                </mat-form-field>
+                <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+                  <small>Please enter valid email.</small>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" name="pswd" type="password" #pswd="ngModel"
+                         [(ngModel)]="currentUser.password" required minlength="6">
+                </mat-form-field>
+                <div *ngIf="pswd.errors && (pswd.dirty || pswd.touched)" class="alert alert-danger">
+                  <small>Please enter valid password.</small>
+                </div>
+              </div>
+            </mat-card-content>
+            <mat-card-actions>
+              <div class="col-sm-12">
+                <button class="col-sm-12" type="submit" mat-raised-button color="primary" [disabled]="!f.form.valid">
+                  Login
+                </button>
+              </div>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+      <div class="google-btn">
+        <div class="google-icon-wrapper">
+          <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+        </div>
+        <p class="btn-text"(click)="signInWithGoogle()"><b>LOGIN WITH GOOGLE</b></p>
+      </div>
+    
+    
+</div>
+

@@ -1,0 +1,17 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-image: url("./core/images/backgroundlogin.png");
+    height: 50px; 
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+  .main {
+    flex: 1;
+    padding: 25px;
+    
+  }
+}
